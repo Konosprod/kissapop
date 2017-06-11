@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "Kissapop",
+    "version": "1.0",
+
+    "description": "Pop a video tab from a kissasian page, bypassing anti-addblocking measure",
+
+    "icons": {
+        "48": "icons/kiss-48.png"
+    },
+
+    "permissions": [
+        "activeTab",
+        "tabs"
+    ],
+
+    "background" : {
+        "scripts" : ["background.js"]
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://kissasian.com/Drama/*/*"],
+            "js": ["assets/jquery-3.2.1.min.js", "kissapop.js"]
+        }
+    ]
+}
